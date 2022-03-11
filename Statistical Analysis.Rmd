@@ -1,0 +1,65 @@
+---
+title: "Hypothesis Test"
+output: html_notebook
+---
+
+# Read Data
+```{r}
+library(openxlsx)
+library(knitr)
+df_0050 <- read.xlsx("0050.xlsx", colNames = TRUE)
+df_00850 <- read.xlsx("00850.xlsx", colNames = TRUE)
+df_00878 <- read.xlsx("00878.xlsx", colNames = TRUE)
+df_T4812A <- read.xlsx("T4812A.xlsx", colNames = TRUE)
+df_TAIEX <- read.xlsx("TAIEX_Month.xlsx", colNames = TRUE)
+```
+# Hypotheis Test
+
+## 0050
+```{r}
+shapiro.test(df_0050$Port_return)
+shapiro.test(df_0050$M_0050)
+var.test(df_0050$Port_return, df_0050$M_0050)
+t.test(df_0050$Port_return, df_0050$M_0050, var.equal = FALSE)
+```
+## 00850
+```{r}
+shapiro.test(df_00850$Port_return)
+shapiro.test(df_00850$M_00850)
+var.test(df_00850$Port_return, df_00850$M_00850)
+t.test(df_00850$Port_return, df_00850$M_00850, var.equal = FALSE)
+```
+## 00878
+```{r}
+shapiro.test(df_00878$Port_return)
+shapiro.test(df_00878$M_00878)
+var.test(df_00878$Port_return, df_00878$M_00878)
+t.test(df_00878$Port_return, df_00878$M_00878, var.equal = TRUE)
+```
+## T4812A
+```{r}
+shapiro.test(df_T4812A$Port_return)
+shapiro.test(df_T4812A$T4812A)
+var.test(df_T4812A$Port_return, df_T4812A$T4812A)
+t.test(df_T4812A$Port_return, df_T4812A$T4812A, var.equal = FALSE)
+```
+## TAIEX
+```{r}
+shapiro.test(df_TAIEX$Port_return)
+shapiro.test(df_TAIEX$Return_M)
+var.test(df_TAIEX$Port_return, df_TAIEX$Return_M)
+t.test(df_TAIEX$Port_return, df_TAIEX$Return_M, var.equal = FALSE)
+```
+
+
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
