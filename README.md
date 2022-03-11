@@ -65,7 +65,7 @@
 
 4. Filter out the companies with low Emission Score
 
-5. Rank Eikon ESG Score in descending order amd MSCI ESG Score in descending order
+5. Rank Eikon ESG Score in descending order and MSCI ESG Score in descending order
 
 6. Filter out the companies with high ESG Score
 
